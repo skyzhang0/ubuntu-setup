@@ -11,7 +11,7 @@ apt full-upgrade -y
 apt autoremove -y
 
 # 常用工具
-apt install -y dpkg git wget ca-certificates subversion openssl
+apt install -y dpkg git wget ca-certificates subversion openssl tree
 
 # C++ 开发工具
 apt install -y cmake valgrind
