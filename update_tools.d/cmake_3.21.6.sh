@@ -1,31 +1,34 @@
 #! /bin/bash
 # 编译安装 cmake 最新版本
 
+# 设置 CMake 版本号，如果要安装其他版本仅需修改此变量
+cmake_version = "3.21.6"
+
 # 设置出错停止
 set -e
 
 apt install -y build-essential # 基础编译工具
-apt install -y libssl-dev # 依赖
+apt install -y libssl-dev      # 依赖
 
-if [ -f cmake-3.21.6.tar.gz ]; then
-    rm cmake-3.21.6.tar.gz
+if [ -f cmake-${cmake_version}.tar.gz ]; then
+    rm cmake-${cmake_version}.tar.gz
 else
-    wget https://github.com/Kitware/CMake/releases/download/v3.21.6/cmake-3.21.6.tar.gz
+    wget https://github.com/Kitware/CMake/releases/download/v${cmake_version}/cmake-${cmake_version}.tar.gz
 fi
-if [ -d cmake-3.21.6 ]; then
-    rm -r cmake-3.21.6
+if [ -d cmake-${cmake_version} ]; then
+    rm -r cmake-${cmake_version}
 fi
 
-tar -zxf cmake-3.21.6.tar.gz
-cd cmake-3.21.6
+tar -zxf cmake-${cmake_version}.tar.gz
+cd cmake-${cmake_version}
 ./bootstrap
 make -j 8
 make install
 cd ..
 
-if [ -f cmake-3.21.6.tar.gz ]; then
-    rm cmake-3.21.6.tar.gz
+if [ -f cmake-${cmake_version}.tar.gz ]; then
+    rm cmake-${cmake_version}.tar.gz
 fi
-if [ -d cmake-3.21.6 ]; then
-    rm -r cmake-3.21.6
+if [ -d cmake-${cmake_version} ]; then
+    rm -r cmake-${cmake_version}
 fi

@@ -1,7 +1,7 @@
 #! /bin/bash
 # 配置 WSL 使用 windows 系统代理（仅适用于 WSL1）
 
-# 将内容复制到 /etc/environment 
+# 将内容复制到 sudo vim /etc/environment 
 
 # 配置代理 WSL2
 export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
