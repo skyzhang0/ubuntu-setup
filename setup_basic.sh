@@ -1,8 +1,6 @@
 #! /bin/bash
 #用于 ubuntu 系统基础配置
 
-
-
 # 获取 root 权限
 sudo passwd root
 
