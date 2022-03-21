@@ -15,13 +15,12 @@ apt install -y libssl-dev      # 依赖
 
 if [ -f cmake-${cmake_version}.tar.gz ]; then
     rm cmake-${cmake_version}.tar.gz
-else
-    wget https://github.com/Kitware/CMake/releases/download/v${cmake_version}/cmake-${cmake_version}.tar.gz
 fi
 if [ -d cmake-${cmake_version} ]; then
     rm -r cmake-${cmake_version}
 fi
 
+wget https://github.com/Kitware/CMake/releases/download/v${cmake_version}/cmake-${cmake_version}.tar.gz
 tar -zxf cmake-${cmake_version}.tar.gz
 cd cmake-${cmake_version}
 ./bootstrap
