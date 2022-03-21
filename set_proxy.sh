@@ -3,13 +3,13 @@
 
 # 将内容复制到 sudo vim /etc/environment 
 
-# 配置代理 WSL2
+# 配置代理 WSL2，此处一定要小写，wget 区分大小写
 export HOST_IP=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
-export HTTPS_PROXY="http://${HOST_IP}:18889"
-export HTTP_PROXY="http://${HOST_IP}:18889"
-export ALL_PROXY="http://${HOST_IP}:18889"
-export FTP_PROXY="http://${HOST_IP}:18889"
+export https_proxy="http://${HOST_IP}:18889"
+export http_proxy="http://${HOST_IP}:18889"
+export all_proxy="http://${HOST_IP}:18889"
+export ftp_proxy="http://${HOST_IP}:18889"
 
 # 配置 git 代理
-git config --global http.proxy "socks5://${HOST_IP}:18888"
-git config --global https.proxy "socks5://${HOST_IP}:18888"
+git config --global http.proxy "socks5://${HOST_IP}:18889"
+git config --global https.proxy "socks5://${HOST_IP}:18889"

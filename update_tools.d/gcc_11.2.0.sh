@@ -2,23 +2,23 @@
 # 编译安装 GCC 工具链最新版本
 
 # 设置 GCC/GDB 版本号，如果要安装其他版本仅需修改此变量
-gcc_version = "11.2"
+gcc_version="11.2"
 
 # 设置出错停止
 set -e
 
 # 设置代理
-source ../set_proxy.sh
+source ./set_proxy.sh
 
 # 安装依赖
-sudo bash ./gmp_6.2.1.sh
-sudo bash ./mpfr_4.4.0.sh
-sudo bash ./mpc_1.0.1.sh
+sudo bash ./update_tools.d/gmp_6.2.1.sh
+sudo bash ./update_tools.d/mpfr_4.1.0.sh
+sudo bash ./update_tools.d/mpc_1.2.1.sh
 
-if [ ! -f gcc-${gcc_version}.0.tar.gz ]; then
+if [ -f gcc-${gcc_version}.0.tar.gz ]; then
     rm gcc-${gcc_version}.0.tar.gz
 fi
-if [ ! -f gdb-${gcc_version}.tar.gz ]; then
+if [ -f gdb-${gcc_version}.tar.gz ]; then
     rm gdb-${gcc_version}.tar.gz
 fi
 if [ -d gcc-${gcc_version}.0 ]; then

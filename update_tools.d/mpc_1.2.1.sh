@@ -2,13 +2,13 @@
 # 编译安装 MPC
 
 # 设置 MPC 版本号，如果要安装其他版本仅需修改此变量
-mpc_version = "1.2.1"
+mpc_version="1.2.1"
 
 # 设置出错停止
 set -e
 
 # 设置代理
-source ../set_proxy.sh
+source ./set_proxy.sh
 
 if [ -f mpc-${mpc_version}.tar.xz ]; then
     rm mpc-${mpc_version}.tar.xz
