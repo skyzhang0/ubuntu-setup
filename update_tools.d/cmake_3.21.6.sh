@@ -7,6 +7,9 @@ cmake_version = "3.21.6"
 # 设置出错停止
 set -e
 
+# 设置代理
+source ../set_proxy.sh
+
 apt install -y build-essential # 基础编译工具
 apt install -y libssl-dev      # 依赖
 
