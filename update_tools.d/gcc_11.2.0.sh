@@ -50,6 +50,9 @@ make -j 6
 sudo make install
 cd ..
 
+rm /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+ln -s /usr/local/lib64/libstdc++.so.6 /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
 if [ -f gcc-${gcc_version}.0.tar.gz ]; then
     rm gcc-${gcc_version}.0.tar.gz
 fi
