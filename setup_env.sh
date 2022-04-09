@@ -11,7 +11,7 @@ apt full-upgrade -y
 apt autoremove -y
 
 # 常用工具
-apt install -y dpkg git wget ca-certificates subversion openssl tree
+apt install -y dpkg git wget curl gnupg ca-certificates subversion openssl tree
 
 # C++ 开发工具
 apt install -y cmake valgrind
@@ -43,3 +43,23 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 # Python 常用包
 pip install python3-pip-autoremove virtualenv PySocks
+
+# Java
+apt install -y openjdk-8-jdk openjdk-11-jdk openjdk-13-jdk openjdk-17-jdk 
+
+# nvm, nodejs, npm
+git clone https://gitee.com/mirrors/nvm.git /usr/share/nvm
+cd /usr/share/nvm
+git checkout v0.39.1
+source ./nvm.sh
+nvm install 11
+nvm install 12
+nvm install 15
+nvm install 16
+nvm install 17
+nvm install node
+nvm use node
+
+# Docker
+apt remove -y docker docker-engine docker.io containerd runc
+apt install -y docker-ce docker-ce-cli containerd.io
