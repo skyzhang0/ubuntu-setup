@@ -12,4 +12,4 @@ bash ./cmake_3.21.6.sh
 # 更新 gcc 到 11.2.0
 bash ./gcc_11.2.0.sh
 
-cd..
+cd ..
