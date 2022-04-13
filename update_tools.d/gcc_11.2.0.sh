@@ -8,12 +8,12 @@ gcc_version="11.2"
 set -e
 
 # 设置代理
-source ./set_proxy.sh
+source ../set_proxy.sh
 
 # 安装依赖
-sudo bash ./update_tools.d/gmp_6.2.1.sh
-sudo bash ./update_tools.d/mpfr_4.1.0.sh
-sudo bash ./update_tools.d/mpc_1.2.1.sh
+sudo bash ./gmp_6.2.1.sh
+sudo bash ./mpfr_4.1.0.sh
+sudo bash ./mpc_1.2.1.sh
 
 if [ -f gcc-${gcc_version}.0.tar.gz ]; then
     rm gcc-${gcc_version}.0.tar.gz

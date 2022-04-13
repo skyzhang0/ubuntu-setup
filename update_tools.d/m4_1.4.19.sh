@@ -8,7 +8,7 @@ m4_version="1.4.19"
 set -e
 
 # 设置代理
-source ./set_proxy.sh
+source ../set_proxy.sh
 
 if [ -f m4-${m4_version}.tar.xz ]; then
     rm m4-${m4_version}.tar.xz

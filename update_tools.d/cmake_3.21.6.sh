@@ -8,30 +8,20 @@ cmake_version="3.21.6"
 set -e
 
 # 设置代理
-source ./set_proxy.sh
+source ../set_proxy.sh
 
 apt install -y build-essential # 基础编译工具
 apt install -y libssl-dev      # 依赖
 
-if [ -f cmake-${cmake_version}.tar.gz ]; then
-    rm cmake-${cmake_version}.tar.gz
-fi
-if [ -d cmake-${cmake_version} ]; then
-    rm -r cmake-${cmake_version}
-fi
+[ -d ./cmake/ ] && rm -r ./cmake/
 
-# wget https://github.com/Kitware/CMake/releases/download/v3.21.6/cmake-3.21.6.tar.gz
-wget https://github.com/Kitware/CMake/releases/download/v${cmake_version}/cmake-${cmake_version}.tar.gz
-tar -zxf cmake-${cmake_version}.tar.gz
-cd cmake-${cmake_version}
+git clone https://gitee.com/mirrors/CMake.git cmake
+cd cmake
+# git checkout v3.21.6
+git checkout v${cmake_version}
 ./bootstrap
 make -j 8
 make install
 cd ..
 
-if [ -f cmake-${cmake_version}.tar.gz ]; then
-    rm cmake-${cmake_version}.tar.gz
-fi
-if [ -d cmake-${cmake_version} ]; then
-    rm -r cmake-${cmake_version}
-fi
+[ -d cmake ] && rm -r cmake

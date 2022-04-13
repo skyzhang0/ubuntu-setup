@@ -8,14 +8,15 @@ set -e
 echo "Now setting root's password:"
 sudo passwd root
 
-# 修改源
+# 安装必要工具
 sudo apt install -y ca-certificates
+
+# 修改源
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup
 sudo cp ./sources.list /etc/apt/sources.list
-if [ ! -d /etc/apt/sources.list.d]; then
-    sudo mkdir /etc/apt/sources.list.d
-fi
+[ ! -d /etc/apt/sources.list.d ] && sudo mkdir /etc/apt/sources.list.d
 sudo cp ./sources.list.d/* /etc/apt/sources.list.d
+sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
 # 修改 Shell 启动文件
 [ ! -d /etc/profile.d ] && sudo mkdir /etc/profile.d
@@ -27,6 +28,14 @@ sudo wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 
 # 添加 Docker 的 GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# 加速 Docker
+[ ! -d /etc/docker ] && sudo mkdir /etc/docker
+sudo cp ./docker/* /etc/docker
+
+# 添加 v2ray 配置文件
+[ ! -d /etc/v2ray ] && sudo mkdir /etc/v2ray
+sudo cp ./v2ray/* /etc/v2ray
 
 # 添加 Oracle Java PPA
 # sudo add-apt-repository ppa:webupd8team/java

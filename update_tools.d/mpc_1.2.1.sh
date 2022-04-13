@@ -8,7 +8,7 @@ mpc_version="1.2.1"
 set -e
 
 # 设置代理
-source ./set_proxy.sh
+source ../set_proxy.sh
 
 if [ -f mpc-${mpc_version}.tar.xz ]; then
     rm mpc-${mpc_version}.tar.xz
