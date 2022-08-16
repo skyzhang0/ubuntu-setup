@@ -1,1 +1,1 @@
-sudo bash ./go.sh | tee -a ./log.txt
+sudo bash ./run.sh | tee -a ./log.txt
