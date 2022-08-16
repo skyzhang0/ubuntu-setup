@@ -1,4 +1,5 @@
 #!/bin/bash
+# 用于配置 Clion 默认的ssh远程连接
 set -e
 
 SSHD_LISTEN_ADDRESS=127.0.0.1
