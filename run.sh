@@ -10,7 +10,7 @@ if [[ "$UID" -ne '0' ]]; then
     exit 1
 fi
 
-bash setup_basic.sh
-bash setup_env.sh
+bash system.sh
+bash apt.sh
 bash install.sh
 bash update.sh
