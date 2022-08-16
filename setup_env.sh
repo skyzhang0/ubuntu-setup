@@ -6,9 +6,7 @@ set -e
 
 #apt 更新
 apt update -y
-apt upgrade -y
 apt full-upgrade -y
-apt autoremove -y
 
 # 常用工具
 apt install -y dpkg git wget curl gnupg ca-certificates openssl subversion tree
