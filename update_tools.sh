@@ -7,9 +7,9 @@ set -e
 cd ./update_tools.d
 
 # 更新 cmake 到 3.21
-bash ./cmake_3.21.6.sh
+bash ./cmake.sh 3.21.6
 
 # 更新 gcc 到 11.2.0
-bash ./gcc_11.2.0.sh
+bash ./gcc.sh 11.2.0
 
 cd ..

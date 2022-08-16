@@ -1,8 +1,11 @@
 #! /bin/bash
 # 编译安装 GCC 工具链最新版本
 
-# 设置 GCC/GDB 版本号，如果要安装其他版本仅需修改此变量
+# 设置 GCC/GDB 默认版本号
 gcc_version="11.2"
+if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
+    gcc_version="$1"
+fi
 
 # 设置出错停止
 set -e
