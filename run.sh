@@ -12,5 +12,5 @@ fi
 
 bash setup_basic.sh
 bash setup_env.sh
-bash install_tools.sh
-bash update_tools.sh
+bash install.sh
+bash update.sh
