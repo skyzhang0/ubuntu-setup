@@ -4,6 +4,7 @@
 # 设置出错停止
 set -e
 
+# 检测是否有 root 权限
 if [[ "$UID" -ne '0' ]]; then
     echo "Not running with root, exiting..."
     exit 1
