@@ -9,7 +9,7 @@ echo "Now setting root's password:"
 sudo passwd root
 
 # 安装必要工具
-sudo apt install -y ca-certificates
+sudo apt install -y ca-certificates curl
 
 # 修改源
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.backup
