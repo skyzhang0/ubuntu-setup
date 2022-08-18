@@ -10,12 +10,8 @@ set -e
 # 设置代理
 source ../set_proxy.sh
 
-if [ -f m4-${m4_version}.tar.xz ]; then
-    rm m4-${m4_version}.tar.xz
-fi
-if [ -d m4-${m4_version} ]; then
-    rm -r m4-${m4_version}
-fi
+[ -f m4-${m4_version}.tar.xz ] && rm m4-${m4_version}.tar.xz
+[ -d m4-${m4_version} ] && rm -r m4-${m4_version}
 
 # wget https://mirrors.cloud.tencent.com/gnu/m4/m4-1.4.19.tar.xz
 wget https://mirrors.cloud.tencent.com/gnu/m4/m4-${m4_version}.tar.xz
@@ -27,9 +23,5 @@ make -j 6
 sudo make install 
 cd ..
 
-if [ -f m4-${m4_version}.tar.xz ]; then
-    rm m4-${m4_version}.tar.xz
-fi
-if [ -d m4-${m4_version} ]; then
-    rm -r m4-${m4_version}
-fi
+[ -f m4-${m4_version}.tar.xz ] && rm m4-${m4_version}.tar.xz
+[ -d m4-${m4_version} ] && rm -r m4-${m4_version}

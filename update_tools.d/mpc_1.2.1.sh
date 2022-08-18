@@ -10,12 +10,8 @@ set -e
 # 设置代理
 source ../set_proxy.sh
 
-if [ -f mpc-${mpc_version}.tar.xz ]; then
-    rm mpc-${mpc_version}.tar.xz
-fi
-if [ -d mpc-${mpc_version} ]; then
-    rm -r mpc-${mpc_version}
-fi
+[ -f mpc-${mpc_version}.tar.xz ] && rm mpc-${mpc_version}.tar.xz
+[ -d mpc-${mpc_version} ] && rm -r mpc-${mpc_version}
 
 # wget https://mirrors.cloud.tencent.com/gnu/mpc/mpc-1.2.1.tar.gz
 wget https://mirrors.cloud.tencent.com/gnu/mpc/mpc-${mpc_version}.tar.gz
@@ -27,9 +23,5 @@ make -j 6
 sudo make install 
 cd ..
 
-if [ -f mpc-${mpc_version}.tar.xz ]; then
-    rm mpc-${mpc_version}.tar.xz
-fi
-if [ -d mpc-${mpc_version} ]; then
-    rm -r mpc-${mpc_version}
-fi
+[ -f mpc-${mpc_version}.tar.xz ] && rm mpc-${mpc_version}.tar.xz
+[ -d mpc-${mpc_version} ] && rm -r mpc-${mpc_version}

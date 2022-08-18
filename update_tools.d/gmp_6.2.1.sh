@@ -13,12 +13,8 @@ source ../set_proxy.sh
 # 安装依赖
 sudo bash ./m4_1.4.19.sh
 
-if [ -f gmp-${gmp_version}.tar.xz ]; then
-    rm gmp-${gmp_version}.tar.xz
-fi
-if [ -d gmp-${gmp_version} ]; then
-    rm -r gmp-${gmp_version}
-fi
+[ -f gmp-${gmp_version}.tar.xz ] && rm gmp-${gmp_version}.tar.xz
+[ -d gmp-${gmp_version} ] && rm -r gmp-${gmp_version}
 
 # wget https://mirrors.cloud.tencent.com/gnu/gmp/gmp-6.2.1.tar.xz
 wget https://mirrors.cloud.tencent.com/gnu/gmp/gmp-${gmp_version}.tar.xz
@@ -30,9 +26,5 @@ make -j 6
 sudo make install
 cd ..
 
-if [ -f gmp-${gmp_version}.tar.xz ]; then
-    rm gmp-${gmp_version}.tar.xz
-fi
-if [ -d gmp-${gmp_version} ]; then
-    rm -r gmp-${gmp_version}
-fi
+[ -f gmp-${gmp_version}.tar.xz ] && rm gmp-${gmp_version}.tar.xz
+[ -d gmp-${gmp_version} ] && rm -r gmp-${gmp_version}
