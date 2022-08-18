@@ -20,8 +20,8 @@ if [ -d gmp-${gmp_version} ]; then
     rm -r gmp-${gmp_version}
 fi
 
-# wget https://mirrors.tuna.tsinghua.edu.cn/gnu/gmp/gmp-6.2.1.tar.xz
-wget https://mirrors.tuna.tsinghua.edu.cn/gnu/gmp/gmp-${gmp_version}.tar.xz
+# wget https://mirrors.cloud.tencent.com/gnu/gmp/gmp-6.2.1.tar.xz
+wget https://mirrors.cloud.tencent.com/gnu/gmp/gmp-${gmp_version}.tar.xz
 # tar -xf gmp-6.2.1.tar.xz
 tar -xf gmp-${gmp_version}.tar.xz
 cd gmp-${gmp_version}

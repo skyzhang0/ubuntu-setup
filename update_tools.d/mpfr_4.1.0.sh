@@ -13,8 +13,8 @@ source ../set_proxy.sh
 [ -f mpfr-${mpfr_version}.tar.xz ] && rm mpfr-${mpfr_version}.tar.xz
 [ -d mpfr-${mpfr_version} ] && rm -r mpfr-${mpfr_version}
 
-# wget https://mirrors.tuna.tsinghua.edu.cn/gnu/mpfr/mpfr-4.1.0.tar.xz
-wget https://mirrors.tuna.tsinghua.edu.cn/gnu/mpfr/mpfr-${mpfr_version}.tar.xz
+# wget https://mirrors.cloud.tencent.com/gnu/mpfr/mpfr-4.1.0.tar.xz
+wget https://mirrors.cloud.tencent.com/gnu/mpfr/mpfr-${mpfr_version}.tar.xz
 # tar -xf mpfr-4.1.0.tar.xz
 tar -xf mpfr-${mpfr_version}.tar.xz
 cd mpfr-${mpfr_version}

@@ -32,10 +32,10 @@ if [ -d gdb-${gcc_version} ]; then
 fi
 
 # 下载并解压源码
-# wget https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.gz
-# wget https://mirrors.tuna.tsinghua.edu.cn/gnu/gdb/gdb-11.2.tar.gz
-wget https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-${gcc_version}.0/gcc-${gcc_version}.0.tar.gz
-wget https://mirrors.tuna.tsinghua.edu.cn/gnu/gdb/gdb-${gcc_version}.tar.gz
+# wget https://mirrors.cloud.tencent.com/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.gz
+# wget https://mirrors.cloud.tencent.com/gnu/gdb/gdb-11.2.tar.gz
+wget https://mirrors.cloud.tencent.com/gnu/gcc/gcc-${gcc_version}.0/gcc-${gcc_version}.0.tar.gz
+wget https://mirrors.cloud.tencent.com/gnu/gnu/gdb/gdb-${gcc_version}.tar.gz
 # tar -zxf ./gcc-11.2.0.tar.gz
 # tar -zxf ./gdb-11.2.tar.gz
 tar -zxf ./gcc-${gcc_version}.0.tar.gz

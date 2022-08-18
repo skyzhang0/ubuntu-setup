@@ -17,8 +17,8 @@ if [ -d m4-${m4_version} ]; then
     rm -r m4-${m4_version}
 fi
 
-# wget https://mirrors.tuna.tsinghua.edu.cn/gnu/m4/m4-1.4.19.tar.xz
-wget https://mirrors.tuna.tsinghua.edu.cn/gnu/m4/m4-${m4_version}.tar.xz
+# wget https://mirrors.cloud.tencent.com/gnu/m4/m4-1.4.19.tar.xz
+wget https://mirrors.cloud.tencent.com/gnu/m4/m4-${m4_version}.tar.xz
 # tar -xf m4-1.4.19.tar.xz
 tar -xf m4-${m4_version}.tar.xz
 cd m4-${m4_version}

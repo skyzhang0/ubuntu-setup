@@ -17,8 +17,8 @@ if [ -d mpc-${mpc_version} ]; then
     rm -r mpc-${mpc_version}
 fi
 
-# wget https://mirrors.tuna.tsinghua.edu.cn/gnu/mpc/mpc-1.2.1.tar.gz
-wget https://mirrors.tuna.tsinghua.edu.cn/gnu/mpc/mpc-${mpc_version}.tar.gz
+# wget https://mirrors.cloud.tencent.com/gnu/mpc/mpc-1.2.1.tar.gz
+wget https://mirrors.cloud.tencent.com/gnu/mpc/mpc-${mpc_version}.tar.gz
 # tar -xf mpc-1.2.1.tar.gz
 tar -xf mpc-${mpc_version}.tar.gz
 cd mpc-${mpc_version}
