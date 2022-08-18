@@ -3,8 +3,10 @@
 
 # 设置 GCC/GDB 默认版本号
 gcc_version="12.1.0"
+gdb_version=${gcc_version%.*}
 if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
     gcc_version="$1"
+    gdb_version=${gcc_version%.*}
 fi
 
 # 设置出错停止
@@ -18,28 +20,16 @@ sudo bash ./gmp_6.2.1.sh
 sudo bash ./mpfr_4.1.0.sh
 sudo bash ./mpc_1.2.1.sh
 
-if [ -f gcc-${gcc_version}.tar.gz ]; then
-    rm gcc-${gcc_version}.tar.gz
-fi
-if [ -f gdb-${gcc_version}.tar.gz ]; then
-    rm gdb-${gcc_version}.tar.gz
-fi
-if [ -d gcc-${gcc_version} ]; then
-    rm -r gcc-${gcc_version}
-fi
-if [ -d gdb-${gcc_version} ]; then
-    rm -r gdb-${gcc_version}
-fi
+[ -f gcc-${gcc_version}.tar.gz ] && rm gcc-${gcc_version}.tar.gz
+[ -f gdb-${gdb_version}.tar.gz ] && rm gdb-${gdb_version}.tar.gz
+[ -d gcc-${gcc_version} ] && rm -r gcc-${gcc_version}
+[ -d gdb-${gdb_version} ] && rm -r gdb-${gdb_version}
 
 # 下载并解压源码
-# wget https://mirrors.cloud.tencent.com/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.gz
-# wget https://mirrors.cloud.tencent.com/gnu/gdb/gdb-11.2.tar.gz
 wget https://mirrors.cloud.tencent.com/gnu/gcc/gcc-${gcc_version}/gcc-${gcc_version}.tar.gz
-wget https://mirrors.cloud.tencent.com/gnu/gdb/gdb-${gcc_version}.tar.gz
-# tar -zxf ./gcc-11.2.0.tar.gz
-# tar -zxf ./gdb-11.2.tar.gz
+wget https://mirrors.cloud.tencent.com/gnu/gdb/gdb-${gdb_version}.tar.gz
 tar -zxf ./gcc-${gcc_version}.tar.gz
-tar -zxf ./gdb-${gcc_version}.tar.gz
+tar -zxf ./gdb-${gdb_version}.tar.gz
 
 cd gcc-${gcc_version}
 ./configure --disable-multilib
@@ -47,7 +37,7 @@ make -j 6
 sudo make install
 cd ..
 
-cd gdb-${gcc_version}
+cd gdb-${gdb_version}
 ./configure
 make -j 6
 sudo make install
@@ -56,16 +46,7 @@ cd ..
 rm /usr/lib/x86_64-linux-gnu/libstdc++.so.6
 ln -s /usr/local/lib64/libstdc++.so.6 /usr/lib/x86_64-linux-gnu/libstdc++.so.6
 
-if [ -f gcc-${gcc_version}.tar.gz ]; then
-    rm gcc-${gcc_version}.tar.gz
-fi
-
-if [ -f gdb-${gcc_version}.tar.gz ]; then
-    rm gdb-${gcc_version}.tar.gz
-fi
-if [ -d gcc-${gcc_version} ]; then
-    rm -r gcc-${gcc_version}.0
-fi
-if [ -d gdb-${gcc_version} ]; then
-    rm -r gdb-${gcc_version}
-fi
+[ -f gcc-${gcc_version}.tar.gz ] && rm gcc-${gcc_version}.tar.gz
+[ -f gdb-${gdb_version}.tar.gz ] && rm gdb-${gdb_version}.tar.gz
+[ -d gcc-${gcc_version} ] && rm -r gcc-${gcc_version}
+[ -d gdb-${gdb_version} ] && rm -r gdb-${gdb_version}
