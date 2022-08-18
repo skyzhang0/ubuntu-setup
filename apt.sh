@@ -1,5 +1,5 @@
 #! /bin/bash
-#用于 wsl-ubuntu-20.04 开发环境配置
+# 用于 wsl-ubuntu-20.04 开发环境配置
 
 # 设置出错停止
 set -e
@@ -15,7 +15,6 @@ apt install -y tree # 树状输出子目录
 apt install -y sqlite3 libsqlite3-dev # 轻量级数据库
 apt install -y bzip2 bzip2-doc libbz2-1.0 libbz2-dev # 压缩工具+1
 apt install -y uuid uuid-dev libuuid1 # 通用唯一识别码工具
-
 
 # C++ 开发工具
 apt install -y cmake valgrind
@@ -36,7 +35,7 @@ apt install -y \
     libunwind-15-dev \
     libmlir-15-dev mlir-15-tools
 [ -f /usr/bin/lldb ] && rm /usr/bin/lldb
-ln -s /usr/bin/lldb-15 /usr/bin/lldb 
+ln -s /usr/bin/lldb-15 /usr/bin/lldb
 
 # Tex
 apt install -y texlive-full
