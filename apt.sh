@@ -47,8 +47,8 @@ apt install -y python3.8-dev python3.9-dev python3-pip
 # [ -f /usr/bin/python ] && rm /usr/bin/python
 # ln -s /usr/bin/python3 /usr/bin/python
 # pip 换源
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip install -i https://mirrors.cloud.tencent.com/pypi/simple --upgrade pip
+pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
 
 # Python 常用包
 pip install python3-pip-autoremove virtualenv PySocks
