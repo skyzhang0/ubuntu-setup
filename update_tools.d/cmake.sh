@@ -7,8 +7,6 @@ if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
     cmake_version="$1"
 fi
 
-if 
-
 # 设置出错停止
 set -e
 
