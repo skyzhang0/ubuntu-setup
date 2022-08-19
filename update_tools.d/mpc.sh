@@ -4,8 +4,11 @@
 set -e # 设置出错停止
 set -x # 设置输出执行的命令
 
-# 设置 MPC 版本号，如果要安装其他版本仅需修改此变量
+# 设置 MPC 默认版本号
 mpc_version="1.2.1"
+if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
+    mpc_version="$1"
+fi
 
 # 设置代理
 source ../set_proxy.sh

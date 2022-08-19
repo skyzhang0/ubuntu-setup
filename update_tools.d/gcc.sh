@@ -16,9 +16,9 @@ fi
 source ../set_proxy.sh
 
 # 安装依赖
-sudo bash ./gmp_6.2.1.sh
-sudo bash ./mpfr_4.1.0.sh
-sudo bash ./mpc_1.2.1.sh
+sudo bash ./gmp.sh
+sudo bash ./mpfr.sh
+sudo bash ./mpc.sh
 
 [ -f gcc-${gcc_version}.tar.gz ] && rm gcc-${gcc_version}.tar.gz
 [ -f gdb-${gdb_version}.tar.gz ] && rm gdb-${gdb_version}.tar.gz

@@ -4,8 +4,11 @@
 set -e # 设置出错停止
 set -x # 设置输出执行的命令
 
-# 设置 M4 版本号，如果要安装其他版本仅需修改此变量
+# 设置 M4 默认版本号
 m4_version="1.4.19"
+if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
+    m4_version="$1"
+fi
 
 # 设置代理
 source ../set_proxy.sh
