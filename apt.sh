@@ -22,20 +22,9 @@ apt install -y cmake valgrind
 bash clion_setup_env.sh
 # GCC 工具链
 apt install -y build-essential gcc gdb
-# LLVM 工具链（development branch） see:https://apt.llvm.org/
-apt install -y libllvm-15-ocaml-dev libllvm15 llvm-15 llvm-15-dev llvm-15-doc llvm-15-examples llvm-15-runtime
-apt install -y clang-15 clang-tools-15 clang-15-doc libclang-common-15-dev libclang-15-dev libclang1-15 clang-format-15 python3-clang-15 clangd-15 clang-tidy-15
-apt install -y \
-    libfuzzer-15-dev \
-    lldb-15 \
-    lld-15 \
-    libc++-15-dev libc++abi-15-dev \
-    libomp-15-dev \
-    libclc-15-dev \
-    libunwind-15-dev \
-    libmlir-15-dev mlir-15-tools
-[ -f /usr/bin/lldb ] && rm /usr/bin/lldb
-ln -s /usr/bin/lldb-15 /usr/bin/lldb
+# LLVM 工具链（default） see:https://apt.llvm.org/
+wget https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/llvm.sh && chmod +x llvm.sh
+sudo ./llvm.sh all -m https://mirrors.tuna.tsinghua.edu.cn/llvm-apt
 
 # Tex
 apt install -y texlive-full
