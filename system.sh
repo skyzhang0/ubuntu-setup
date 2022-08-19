@@ -1,8 +1,7 @@
 #! /bin/bash
 #用于 ubuntu 系统基础配置
 
-# 设置出错停止
-set -e
+set -e # 设置出错停止
 
 # 获取 root 权限
 echo "Now setting root's password:"
@@ -17,6 +16,9 @@ sudo cp ./sources.list /etc/apt/sources.list
 [ ! -d /etc/apt/sources.list.d ] && sudo mkdir /etc/apt/sources.list.d
 sudo cp ./sources.list.d/* /etc/apt/sources.list.d
 sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
+
+# 修改 系统架构设置
+sudo dpkg --remove-architecture i386 # TODO 智能探测是否有相应架构
 
 # 修改 Shell 启动文件
 [ ! -d /etc/profile.d ] && sudo mkdir /etc/profile.d
