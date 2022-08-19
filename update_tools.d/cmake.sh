@@ -4,7 +4,7 @@
 set -e # 设置出错停止
 set -x # 设置输出执行的命令
 
-# 设置 CMake 版本号，如果要安装其他版本仅需修改此变量
+# 设置 CMake 默认版本号
 cmake_version="3.21.6"=
 if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
     cmake_version="$1"

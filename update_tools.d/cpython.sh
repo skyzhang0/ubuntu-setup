@@ -4,7 +4,7 @@
 # 设置代理
 source ../set_proxy.sh
 
-# 设置 CMake 版本号，如果要安装其他版本仅需修改此变量
+# 设置 Python 默认版本号
 python_version="3.9.13"
 if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
     python_version="$1"
