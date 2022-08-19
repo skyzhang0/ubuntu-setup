@@ -1,11 +1,11 @@
 #! /bin/bash
 # 编译安装 GMP
 
+set -e # 设置出错停止
+set -x # 设置输出执行的命令
+
 # 设置 GMP 版本号，如果要安装其他版本仅需修改此变量
 gmp_version="6.2.1"
-
-# 设置出错停止
-set -e
 
 # 设置代理
 source ../set_proxy.sh

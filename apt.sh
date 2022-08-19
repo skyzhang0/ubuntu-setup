@@ -1,8 +1,8 @@
 #! /bin/bash
 # 用于 wsl-ubuntu-20.04 开发环境配置
 
-# 设置出错停止
-set -e
+set -e # 设置出错停止
+set -x # 设置输出执行的命令
 
 #apt 更新
 apt update -y

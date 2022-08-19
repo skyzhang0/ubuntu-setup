@@ -1,6 +1,9 @@
 #! /bin/bash
 # 编译安装 GCC 工具链最新版本
 
+set -e # 设置出错停止
+set -x # 设置输出执行的命令
+
 # 设置 GCC/GDB 默认版本号
 gcc_version="12.1.0"
 gdb_version=${gcc_version%.*}
@@ -8,9 +11,6 @@ if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
     gcc_version="$1"
     gdb_version=${gcc_version%.*}
 fi
-
-# 设置出错停止
-set -e
 
 # 设置代理
 source ../set_proxy.sh

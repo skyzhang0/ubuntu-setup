@@ -2,6 +2,7 @@
 #用于 ubuntu 系统基础配置
 
 set -e # 设置出错停止
+set -x # 设置输出执行的命令
 
 # 获取 root 权限
 echo "Now setting root's password:"

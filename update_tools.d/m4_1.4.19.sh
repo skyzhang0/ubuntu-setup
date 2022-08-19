@@ -1,11 +1,11 @@
 #! /bin/bash
 # 编译安装 M4
 
+set -e # 设置出错停止
+set -x # 设置输出执行的命令
+
 # 设置 M4 版本号，如果要安装其他版本仅需修改此变量
 m4_version="1.4.19"
-
-# 设置出错停止
-set -e
 
 # 设置代理
 source ../set_proxy.sh
