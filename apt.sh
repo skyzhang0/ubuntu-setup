@@ -28,7 +28,7 @@ apt install -y cmake valgrind
 # 配置远程 Clion 开发
 bash clion_setup_env.sh
 # GCC 工具链
-apt install -y build-essential gcc g++ gdb
+apt install -y build-essential gcc-8 g++ gdb
 # LLVM 工具链（default） see:https://apt.llvm.org/
 wget https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/llvm.sh && chmod +x llvm.sh
 sudo ./llvm.sh all -m https://mirrors.tuna.tsinghua.edu.cn/llvm-apt
@@ -37,11 +37,10 @@ sudo ./llvm.sh all -m https://mirrors.tuna.tsinghua.edu.cn/llvm-apt
 apt install -y texlive-full
 
 # Python
-apt install -y python3.8-dev python3.9-dev python3-pip
-# [ -f /usr/bin/python3 ] && rm /usr/bin/python3
-# ln -s /usr/bin/python3.9 /usr/bin/python3
-# [ -f /usr/bin/python ] && rm /usr/bin/python
-# ln -s /usr/bin/python3 /usr/bin/python
+apt install -y python3 python3-dev python3-doc libpython3-dev python3-pip
+apt install -y python2 python2-dev python2-doc libpython2-dev
+apt install -y python3.8 python3.8-dev python3.8-full libpython3.8-dev
+apt install -y python3.9 python3.9-dev python3.9-full libpython3.9-dev
 # pip 换源
 pip install -i https://mirrors.cloud.tencent.com/pypi/simple --upgrade pip
 pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
@@ -49,7 +48,7 @@ pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
 # Python 常用包
 pip install python3-pip-autoremove # 自动删除包及无用依赖
 pip install virtualenv # 虚拟环境
-pip install PySocks
+pip install PySocks # 基于Python的SOCKS代理客户端
 
 # Java
 apt install -y openjdk-8-jdk openjdk-11-jdk openjdk-13-jdk openjdk-17-jdk
