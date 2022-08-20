@@ -28,7 +28,9 @@ apt install -y cmake valgrind
 # 配置远程 Clion 开发
 bash clion_setup_env.sh
 # GCC 工具链
-apt install -y build-essential gcc-8 g++ gdb
+apt install -y build-essential gcc-8 gcc-9 gdb
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 20 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 30 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 # LLVM 工具链（default） see:https://apt.llvm.org/
 wget https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/llvm.sh && chmod +x llvm.sh
 sudo ./llvm.sh all -m https://mirrors.tuna.tsinghua.edu.cn/llvm-apt
