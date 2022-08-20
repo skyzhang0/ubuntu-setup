@@ -9,9 +9,16 @@ apt update -y
 apt full-upgrade -y
 
 # 常用工具
-apt install -y dpkg git wget curl gnupg openssl subversion
+apt install -y vim dpkg git wget curl gnupg openssl subversion
 apt install -y ca-certificates # CA证书 用于ssl等
 apt install -y tree # 树状输出子目录
+apt install -y asciidoc # 文档写作语言
+apt install -y unzip # zip文件解压
+apt install -y patch # 用于修补升级文件
+apt install -y p7zip-full # 7z支持
+apt install -y rsync # 增量及远程同步数据
+apt install -y autoconf automake autopoint # 用于生成编译安装所需要的脚本
+apt install -y ccache # 编译缓存，加速c/c++编译环境
 apt install -y sqlite3 libsqlite3-dev # 轻量级数据库
 apt install -y bzip2 bzip2-doc libbz2-1.0 libbz2-dev # 压缩工具+1
 apt install -y uuid uuid-dev libuuid1 # 通用唯一识别码工具
@@ -21,7 +28,7 @@ apt install -y cmake valgrind
 # 配置远程 Clion 开发
 bash clion_setup_env.sh
 # GCC 工具链
-apt install -y build-essential gcc gdb
+apt install -y build-essential gcc g++ gdb
 # LLVM 工具链（default） see:https://apt.llvm.org/
 wget https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/llvm.sh && chmod +x llvm.sh
 sudo ./llvm.sh all -m https://mirrors.tuna.tsinghua.edu.cn/llvm-apt
@@ -40,7 +47,9 @@ pip install -i https://mirrors.cloud.tencent.com/pypi/simple --upgrade pip
 pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
 
 # Python 常用包
-pip install python3-pip-autoremove virtualenv PySocks
+pip install python3-pip-autoremove # 自动删除包及无用依赖
+pip install virtualenv # 虚拟环境
+pip install PySocks
 
 # Java
 apt install -y openjdk-8-jdk openjdk-11-jdk openjdk-13-jdk openjdk-17-jdk
