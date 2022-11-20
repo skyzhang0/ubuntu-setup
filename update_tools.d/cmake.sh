@@ -5,7 +5,7 @@ set -e # 设置出错停止
 set -x # 设置输出执行的命令
 
 # 设置 CMake 默认版本号
-cmake_version="3.21.6"=
+cmake_version="3.23.2"=
 if [ $# -ge 1 ]; then # 若有参数则把第一个作为版本号
     cmake_version="$1"
 fi
