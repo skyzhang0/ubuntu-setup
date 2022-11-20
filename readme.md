@@ -1,2 +1,6 @@
-先 bash system.sh
-然后 sudo bash run.sh
+Ubuntu 编程环境一键配置脚本（自用）
+
+```bash
+bash system.sh
+sudo bash run.sh
+```
