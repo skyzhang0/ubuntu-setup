@@ -22,6 +22,7 @@ apt install -y ccache # 编译缓存，加速c/c++编译环境
 apt install -y sqlite3 libsqlite3-dev # 轻量级数据库
 apt install -y bzip2 bzip2-doc libbz2-1.0 libbz2-dev # 压缩工具+1
 apt install -y uuid uuid-dev libuuid1 # 通用唯一识别码工具
+apt install -y yasm nasm # 汇编工具
 
 # C++ 开发工具
 apt install -y cmake valgrind
@@ -56,7 +57,7 @@ pip install PySocks # 基于Python的SOCKS代理客户端
 apt install -y openjdk-8-jdk openjdk-11-jdk openjdk-13-jdk openjdk-17-jdk
 
 # Docker
-apt install -y docker-ce docker-ce-cli containerd.io
+apt install -y docker-ce docker-ce-cli containerd.io # TODO 国内安装环境还需要优化
 
 # Mysql WSL1 有问题
 # [ -d /var/lib/mysql/ ] && sudo rm -r /var/lib/mysql/  # 删除mysql的数据文件
